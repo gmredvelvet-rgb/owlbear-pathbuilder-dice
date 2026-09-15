@@ -1,13 +1,15 @@
 {
-  "name": "dice",
+  "name": "owlbear-pathbuilder-dice",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "license": "GPL-3.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test \"tests/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -37,5 +39,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
-  }
+  },
+  "description": "Pathbuilder 2e character sheet + 3D dice tray for Owlbear Rodeo (fork of owlbear-rodeo/dice)",
+  "repository": "https://github.com/gmredvelvet-rgb/owlbear-pathbuilder-dice"
 }

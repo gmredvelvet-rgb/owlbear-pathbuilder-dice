@@ -42,6 +42,17 @@ export function getCombinedDiceValue(
   dice: Dice,
   values: Record<string, number>
 ): number | null {
+  const value = getUnmultipliedDiceValue(dice, values);
+  if (value !== null && dice.multiplier !== undefined) {
+    return value * dice.multiplier;
+  }
+  return value;
+}
+
+function getUnmultipliedDiceValue(
+  dice: Dice,
+  values: Record<string, number>
+): number | null {
   const d100Value = checkD100Combination(dice, values);
   if (d100Value !== null) {
     return d100Value;

@@ -135,6 +135,11 @@ function DiceResultsExpanded({
       {dice.map((d, i) => (
         <DiceResultsExpanded key={i} diceRoll={d} rollValues={rollValues} />
       ))}
+      {diceRoll.multiplier !== undefined && diceRoll.multiplier !== 1 && (
+        <Typography textAlign="center" lineHeight="28px" color="white">
+          ×{diceRoll.multiplier}
+        </Typography>
+      )}
       {diceRoll.bonus && (
         <Typography textAlign="center" lineHeight="28px" color="white">
           {diceRoll.bonus > 0 && "+"}

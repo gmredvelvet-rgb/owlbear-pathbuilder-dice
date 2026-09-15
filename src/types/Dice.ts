@@ -69,6 +69,8 @@ export interface Dice {
    */
   combination?: "HIGHEST" | "LOWEST" | "SUM" | "NONE";
   bonus?: number;
+  /** Multiply the combined value of this group (e.g. critical hits) */
+  multiplier?: number;
 }
 
 export function isDice(value: any): value is Dice {

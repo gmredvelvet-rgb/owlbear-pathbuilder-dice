@@ -89,8 +89,22 @@ export function PlayerTray({
         >
           {player?.name}
         </Typography>
+        <PlayerRollLabel player={player} />
       </Box>
     </Box>
+  );
+}
+
+function PlayerRollLabel({ player }: { player?: Player }) {
+  const { diceRoll } = usePlayerDice(player);
+  if (!diceRoll?.label) {
+    return null;
+  }
+  return (
+    <Typography variant="subtitle2" color="rgba(255, 255, 255, 0.7)" textAlign="center">
+      {diceRoll.character ? `${diceRoll.character} · ` : ""}
+      {diceRoll.label}
+    </Typography>
   );
 }
 

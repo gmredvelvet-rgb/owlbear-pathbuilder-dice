@@ -51,6 +51,7 @@ export function DiceRollControls() {
     [counts, defaultDiceCounts, advantage, bonus]
   );
 
+  const roll = useDiceRollStore((state) => state.roll);
   const rollValues = useDiceRollStore((state) => state.rollValues);
   const finishedRolling = useMemo(() => {
     const values = Object.values(rollValues);
@@ -67,6 +68,22 @@ export function DiceRollControls() {
         <span>
           <DicePickedControls />
         </span>
+      </Fade>
+    );
+  } else if (!finishedRolling && roll?.label) {
+    return (
+      <Fade in>
+        <Stack
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            padding: 3,
+          }}
+        >
+          <RollLabel label={roll.label} character={roll.character} />
+        </Stack>
       </Fade>
     );
   } else if (finishedRolling) {
@@ -305,6 +322,21 @@ function DicePickedControls() {
   );
 }
 
+export function RollLabel({ label, character }: { label: string; character?: string }) {
+  return (
+    <Stack alignItems="center" sx={{ pointerEvents: "none", maxWidth: "260px" }}>
+      {character && (
+        <Typography variant="caption" color="rgba(255, 255, 255, 0.7)" noWrap>
+          {character}
+        </Typography>
+      )}
+      <Typography variant="subtitle1" color="white" textAlign="center" lineHeight={1.2}>
+        {label}
+      </Typography>
+    </Stack>
+  );
+}
+
 function FinishedRollControls() {
   const roll = useDiceRollStore((state) => state.roll);
   const clearRoll = useDiceRollStore((state) => state.clearRoll);
@@ -373,6 +405,7 @@ function FinishedRollControls() {
         }}
         component="div"
       >
+        {roll?.label && <RollLabel label={roll.label} character={roll.character} />}
         {roll && (
           <DiceResults
             diceRoll={roll}

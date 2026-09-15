@@ -110,7 +110,8 @@ export function PopoverTray({
               }}
               noWrap
             >
-              {player?.name}
+              {diceRoll?.character || player?.name}
+              {diceRoll?.label && <span> · {diceRoll.label}</span>}
               {finishedRolling && <span> | {finalValue}</span>}
             </Typography>
           </Paper>

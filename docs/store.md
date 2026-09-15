@@ -1,52 +1,44 @@
 ---
-title: Dice
-description: Beautiful 3D dice extension for d20 based systems
-author: Owlbear Rodeo
-image: https://raw.githubusercontent.com/owlbear-rodeo/dice/main/docs/header.jpg
-icon: https://dice.owlbear.rodeo/logo.png
+title: Pathbuilder Dice
+description: Pathbuilder 2e character sheet inside Owlbear Rodeo. Saves, skills and strikes roll as 3D dice everyone sees.
+author: TheGmStudio
+image: https://raw.githubusercontent.com/gmredvelvet-rgb/owlbear-pathbuilder-dice/main/docs/header.jpg
+icon: https://gmredvelvet-rgb.github.io/owlbear-pathbuilder-dice/logo.png
 tags:
-  - built-by-owlbear
   - dice
-manifest: https://dice.owlbear.rodeo/manifest.json
-learn-more: https://owlbear.app
+  - automation
+manifest: https://gmredvelvet-rgb.github.io/owlbear-pathbuilder-dice/manifest.json
+learn-more: https://github.com/gmredvelvet-rgb/owlbear-pathbuilder-dice
 ---
 
-# Dice
+# Pathbuilder Dice
 
-Beautiful 3D dice extension for d20 based systems
+Play Pathfinder 2e with your **Pathbuilder 2e** character without leaving Owlbear Rodeo.
+Every roll lands as **3D dice in the dice tray**, with its name, and the whole room sees it.
 
-You can add dice to your dice tray by clicking one of the dice icons in the left bar.
+## Features
 
-When you want to roll the dice simply click the Roll button.
+- A 3D dice tray based on Owlbear Rodeo Dice that also accepts named rolls.
+- A **Character sheet** button that opens a large panel.
+- **Pathbuilder tab:** the full Pathbuilder 2e app inside Owlbear. Its rolls go to the tray.
+  This needs the free companion browser extension (Chrome / Edge).
+- **Native sheet tab:** import your character with its Pathbuilder JSON export ID. You can roll
+  Perception, saves, skills, lores, strikes with MAP (agile aware), damage and critical hits.
+  There are also a situational modifier, fortune/misfortune and hidden rolls. No browser extension needed.
+- A room-wide roll log and notifications, with natural 20 and natural 1 highlighted.
+- Optional forwarding of every roll to a Discord webhook.
 
-![roll interface](https://raw.githubusercontent.com/owlbear-rodeo/dice/main/docs/rolls.jpg)
+## Getting started
 
-Once rolled the extension will use a physics simulation to determine the results of the roll.
+1. Open the dice tray from the gold d20 icon, then press **Character sheet** in the sidebar.
+2. For the native sheet: in Pathbuilder go to ☰ → Export → *Export JSON*, then paste the number.
+3. For Pathbuilder inside Owlbear: install the companion extension from the link in the panel
+   and reload the room.
 
-**Real-Time Syncing**
+## Support
 
-The dice roller will sync this simulation over the network so all connected players can see the roll in real-time.
+Report problems or request features at
+<https://github.com/gmredvelvet-rgb/owlbear-pathbuilder-dice/issues>.
 
-By default other players dice trays will show up as a small preview in the bottom right. You can expand this preview by clicking it.
-
-![player roll](https://raw.githubusercontent.com/owlbear-rodeo/dice/main/docs/player.jpg)
-
-**Private Rolls**
-
-To make a roll privately you can select the eye icon in the sidebar when making a roll.
-
-**Bonus and Advantage**
-
-To add a bonus or advantage/disadvantage to your next roll you can click the +/- icon in the sidebar.
-
-![bonus](https://raw.githubusercontent.com/owlbear-rodeo/dice/main/docs/bonus.jpg)
-
-**Recent Rolls**
-
-To re-roll one of your recent rolls you can click the search glass icon in the sidebar.
-
-![recent rolls](https://raw.githubusercontent.com/owlbear-rodeo/dice/main/docs/recent.jpg)
-
-**Support**
-
-If you need support for this extension you can email <support@owlbear.rodeo>
+Unofficial. Not affiliated with Pathbuilder 2e, Paizo or Owlbear Rodeo. The 3D dice come from
+Owlbear Rodeo Dice (GPL-3.0).

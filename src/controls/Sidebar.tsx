@@ -14,6 +14,8 @@ import { PluginGate } from "../plugin/PluginGate";
 import { DiceRollSync } from "../plugin/DiceRollSync";
 import { PartyTrays } from "../plugin/PartyTrays";
 import { ResizeObserver as PluginResizeObserver } from "../plugin/ResizeObserver";
+import { ExternalRolls } from "../pathbuilder/ExternalRolls";
+import { SheetButton } from "../pathbuilder/SheetButton";
 
 export function Sidebar() {
   return (
@@ -36,7 +38,9 @@ export function Sidebar() {
         <FairnessTesterButton />
         <PluginGate>
           <Divider flexItem sx={{ mx: 1 }} />
+          <SheetButton />
           <DiceRollSync />
+          <ExternalRolls />
           <PartyTrays />
           <PluginResizeObserver />
         </PluginGate>
