@@ -28,6 +28,12 @@ function initialTab(): TabId {
   }
 }
 
+/** The sheet opens as a popover, or as a modal when the popover is refused */
+function closeSheet() {
+  OBR.popover.close(SHEET_POPOVER_ID).catch(() => undefined);
+  OBR.modal.close(SHEET_POPOVER_ID).catch(() => undefined);
+}
+
 export function SheetApp() {
   const [tab, setTab] = useState<TabId>(initialTab);
   useRollLogListener();
@@ -61,7 +67,7 @@ export function SheetApp() {
           <Tab value="settings" label="Ajustes" />
         </Tabs>
         <Tooltip title="Cerrar hoja">
-          <IconButton onClick={() => OBR.popover.close(SHEET_POPOVER_ID)}>
+          <IconButton onClick={closeSheet}>
             <CloseIcon />
           </IconButton>
         </Tooltip>
